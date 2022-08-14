@@ -11,9 +11,9 @@ fn main() {
         Err(e) => panic!("{}", e)
     };
 
-    let fahr: f32 = cel_input * 1.8 + 32.0;
+    println!("{}", convert_func(cel_input));
+}
 
-    println!("{}", fahr);
-
-
+fn convert_func (cel_number: f32) -> f32 {
+    cel_number * 1.8 + 32.0
 }
