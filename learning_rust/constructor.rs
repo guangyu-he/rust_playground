@@ -25,8 +25,23 @@ impl User {
     }
 }
 
+trait PrintAddress {
+    fn showing_address(&self) -> ();
+
+    fn showing_process(&self) -> () {
+        println!("saving address...");
+    }
+}
+
+impl PrintAddress for User {
+    fn showing_address(&self) -> () {
+        println!("the address for this user is: {}", self.address);
+    }
+}
+
 fn main() -> () {
     let mut user_1: User = User::new("Guangyu").set_id(611);
     user_1.update_address(String::from("Ilsenburger Str."));
-    println!("{},{},{}", user_1.name, user_1.id, user_1.address);
+    user_1.showing_process();
+    user_1.showing_address();
 }
