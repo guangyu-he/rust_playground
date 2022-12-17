@@ -1,8 +1,10 @@
+#[allow(dead_code)]
 struct Card {
     rank: String,
     suit: String,
 }
 
+#[allow(dead_code)]
 struct FrenchDeck {
     ranks: Vec<String>,
     suits: Vec<String>,
@@ -14,8 +16,8 @@ impl FrenchDeck {
         let ranks_list = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"].map(String::from).to_vec();
         let suits_list = ["♣", "♠", "♥", "♦"].map(String::from).to_vec();
         let mut cards_list = vec![];
-        for each_suit in &suits_list {
-            for each_rank in &ranks_list {
+        for each_suit in suits_list.iter() {
+            for each_rank in ranks_list.iter() {
                 cards_list.push(Card {
                     rank: each_rank.to_string(),
                     suit: each_suit.to_string(),
